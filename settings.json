@@ -1,0 +1,4 @@
+{
+    "connectionString": "<your-connection-url>",
+    "port": 3000
+}

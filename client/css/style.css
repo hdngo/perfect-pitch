@@ -1,0 +1,228 @@
+
+html, body {
+    transition: background-color 0.69s ease;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+#container {
+    display: flex;
+    overflow-x: hidden;
+    white-space: nowrap;
+    width: 100%;
+    color: white;
+    transition: opacity 0.69s ease, display 0.69s ease;
+}
+
+.focused, .unfocused, #area-1-content, #area-2-content, #area-3-content, #left-arrow, #right-arrow, #settingsParent, #header {
+    transition: transform 0.69s ease, background-color 0.69s ease, 
+                color 0.69s ease, min-width 0.69s ease, 
+                height 0.69s ease, margin-left 0.69s ease, 
+                margin-right 0.69s ease, opacity 0.45s ease,
+                fill 0.69s ease, stroke 0.69s ease;
+}
+
+.focused {
+    min-width: 60%;
+    height: 75%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+}
+
+.unfocused {
+    min-width: 40%;
+    height: 55%;
+    display: flex;
+}
+
+#tokenForm {
+    width: 20%;
+}
+
+button {
+    color: #fff;
+    padding: 2%;
+}
+
+#tokenSubmit {
+    background-color: #0a7ffc;
+    border: none;
+    border-radius: 5px;
+}
+
+#tokenCreate {
+    background-color: #439eff;
+    border: none;
+    border-radius: 5px;
+}
+
+#tokenSubmit:hover {
+    background-color: #61b0ff;
+}
+
+#tokenCreate:hover {
+    background-color: #61b0ff;
+}
+
+#guestMode {
+    background-color: #5e5e5e;
+    border: none;
+    border-radius: 5px;
+}
+
+#guestMode:hover {
+    background-color: #7e7e7e;
+}
+
+.playButton {
+    background-color: #439eff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 3px 0px 0px rgba(87, 87, 87, 0.3);
+}
+
+.playButton:hover {
+    background-color: #46a2ff;
+    transform: translateY(2px);
+}
+
+#startGame {
+    width: 75%;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#endGame {
+    width: 11%;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.piano {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.key {
+    border: 1px solid black;
+    height: 150px;
+    width: 50px;
+}
+
+.white {
+    background-color: white;
+}
+
+.white:hover {
+    background-color: #e6e6e6;
+}
+
+.black {
+    background-color: black;
+    height: 100px;
+    width: 30px;
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -50px;
+    z-index: 1;
+}
+
+.black:hover {
+    background-color: #525252;
+}
+
+#left-arrow,
+#right-arrow {
+    position: fixed;
+    top: 90%;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#left-arrow {
+    left: 41%;
+}
+
+#right-arrow {
+    right: 41%;
+}
+
+#settings {
+    position: fixed;
+    top: 90%;
+    right:0;
+}
+
+#settingsParent {
+    width: 5em;
+    border-radius: 15px;
+    height: 50px;
+}
+
+.settings-item {
+    height: 50%;
+    fill: #ffffff;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.settings-item:hover {
+    transform: scale(1.1);
+}
+
+#playSound {
+    cursor: pointer;
+    fill: #ffffff;
+}
+
+#playSound:hover {
+    transform: scale(1.1);
+}
+
+#header {
+    position: fixed;
+    top: 7%;
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+}
+
+#username, #log-out, #delete-account {
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#username:hover,
+#log-out:hover, 
+#delete-account:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#resetButton {
+    background-color: #ff6a6a;;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 3px 0px 0px rgba(87, 87, 87, 0.3);
+    color:#fff;
+    width: 15%;
+    height: 3em;
+    font-weight: 500;
+    font-size: medium;
+}
+
+#resetButton:hover {
+    background-color: #ff7b7b;
+    transform: translateY(2px);
+}

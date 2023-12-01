@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfect Pitch!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container" class="row min-vh-100 h-100 text-center d-flex align-items-center justify-content-center">
+        <div id="tokenForm">
+            <h1>Perfect Pitch!</h1>
+            <div class="bg-white p-3 rounded-3 ">
+                <div class="row-auto w-100 mb-2">
+                    <input class="form-control text-center" id="tokenInput" placeholder="Token">
+                </div>
+                <div class="row-auto w-100 mb-2">
+                    <button type="submit" class="w-100" id="tokenSubmit">Log in with Token!</button>
+                </div>
+                <div class="row-auto w-100 mb-2">
+                    <button type="submit" class="w-100" id="tokenCreate">No Token? Create one!</button>
+                </div>
+                <div class="row-auto w-100">
+                    <button type="submit" class="w-100" id="guestMode">Guest Mode</button>
+                </div>
+            </div>
+        </div>
+        <div id="gameArea" class="w-100 h-100 align-items-center justify-content-center">
+            <div id="area-1" class="row unfocused rounded-5 align-items-center justify-content-center p-5">
+                <div id="area-1-content">
+                    <h1>Statistics</h1>
+                    <br>
+                    <div class="d-flex justify-content-center h-75">
+                        <div class="m-2">
+                            <h4>Games Played (Daily)</h4>
+                            <h5><span id="games-daily">0</span></h5>
+                            <br>
+                            <h4>Highest Score (Daily)</h4>
+                            <h5><span id="highscore-daily">0</span></h5>
+                        </div>
+                        <div class="m-2">
+                            <h4>Games Played (All Time)</h4>
+                            <h5><span id="games-life">0</span></h5>
+                            <br>
+                            <h4>Highest Score (All Time)</h4>
+                            <h5><span id="highscore-life">0</span></h5>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="m-2">
+                        <input type="button" id="resetButton" value="RESET"/>
+                    </div>
+                </div>
+            </div>
+            <div id="area-2" class="row focused rounded-5 align-items-center justify-content-center p-5">
+                <div id="area-2-content">
+                    <div id="startScreen" class="d-block">
+                        <button class="playButton" id="startGame">START!</button>
+                    </div>
+                    <div id="playArea" class="d-none">
+                        <div id="performance">
+                            <div class="d-flex justify-content-center">
+                                <div class="m-2">
+                                    <h4>Current Score</h4>
+                                    <h5><span class="score">0</span></h5>
+                                </div>
+                                <div class="m-2">
+                                    <h4>High Score</h4>
+                                    <h5><span id="highscore">0</span></h5>
+                                </div>
+                            </div>
+                            <br>
+                            <h1>Click the note!</h1>
+                            <br>
+                            <div class="d-flex justify-content-center ">
+                                <div id="playSound">
+                                    <svg height="3em" viewBox="0 0 24 24" id="play" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <div class="m-2">
+                                    <h4>Time</h4>
+                                    <h5 id="time">30</h5>
+                                </div>
+                                <div class="m-2">
+                                    <h4>Lives</h4>
+                                    <h5 id="lives">3</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="piano">
+                            <div data-note="C4" class="key white"></div>
+                            <div data-note="Db4" class="key black"></div>
+                            <div data-note="D4" class="key white"></div>
+                            <div data-note="Eb4" class="key black"></div>
+                            <div data-note="E4" class="key white"></div>
+                            <div data-note="F4" class="key white"></div>
+                            <div data-note="Gb4" class="key black"></div>
+                            <div data-note="G4" class="key white"></div>
+                            <div data-note="Ab4" class="key black"></div>
+                            <div data-note="A4" class="key white"></div>
+                            <div data-note="Bb4" class="key black"></div>
+                            <div data-note="B4" class="key white"></div>
+                        </div>
+                    </div>
+                    <div id="endScreen" class="d-none">
+                        <h1>Game Over!</h1>
+                        <br>
+                        <h4>Final Score: <span class="score">0</span></h4>
+                        <br>
+                        <button class="playButton" id="endGame">Okay</button>
+                    </div>
+                </div>
+            </div>
+            <div id="area-3" class="row focused rounded-5 align-items-center justify-content-center p-5">
+                <div id="area-3-content" class="row d-flex justify-content-center ">
+                    <h1>Server Leaderboard</h1>
+                    <h1> </h1>
+                    <table class="d-table h-75 w-75 px-5">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Username</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="server-leaderboard">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="controls">
+                <svg viewBox="0 0 24 24" id="right-arrow" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg"
+                    class="icon flat-line">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <line x1="3" y1="12" x2="21" y2="12"
+                            style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line>
+                        <polyline  data-name="primary" points="18 15 21 12 18 9"
+                            style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                        </polyline>
+                    </g>
+                </svg>
+                <svg viewBox="0 0 24 24" id="left-arrow" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg"
+                    class="icon flat-line">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <line x1="21" y1="12" x2="3" y2="12"
+                            style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line>
+                        <polyline data-name="primary" points="6 9 3 12 6 15"
+                            style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                        </polyline>
+                    </g>
+                </svg>
+                <div id="settings" class="d-flex w-100 align-items-center justify-content-center">
+                    <div id="settingsParent" class="d-flex align-items-center justify-content-center">
+                        <svg class="settings-item" id="mute-background" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.4587 4.71321C11.476 4.50597 12.524 4.50597 13.5413 4.71321C16.947 5.40696 19.5666 8.08688 20.2726 11.4523C19.8627 11.2485 19.4016 11.134 18.9141 11.134C18.5532 11.134 18.1939 11.1845 17.8466 11.2841L17.578 11.3611C16.0326 11.804 14.8649 13.0899 14.5584 14.6863C14.3833 15.5982 14.3833 16.5358 14.5584 17.4477C14.8649 19.0442 16.0326 20.3301 17.578 20.773L17.8466 20.85C18.1939 20.9495 18.5532 21 18.9141 21C20.6184 21 22 19.6011 22 17.8754L22 12.9248L21.9757 12.566C21.6624 7.94133 18.3328 4.10026 13.8447 3.18603C12.6271 2.93799 11.3729 2.93799 10.1553 3.18603C5.66717 4.10026 2.33756 7.94133 2.0243 12.566L2 12.9248L2.00001 17.8754C2 19.6011 3.38158 21 5.08586 21C5.44684 21 5.80608 20.9495 6.15342 20.85L6.42199 20.773C7.96742 20.3301 9.13514 19.0442 9.44163 17.4477C9.6167 16.5358 9.6167 15.5982 9.44163 14.6863C9.13514 13.0899 7.96743 11.804 6.42199 11.3611L6.15342 11.2841C5.80609 11.1845 5.44684 11.134 5.08586 11.134C4.5984 11.134 4.13733 11.2485 3.72744 11.4523C4.4334 8.08687 7.05297 5.40696 10.4587 4.71321Z"
+                                    ></path>
+                            </g>
+                        </svg>
+                        <svg class="settings-item" id="unmute-background" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.7957 3.191C22.0681 2.91855 22.0681 2.4768 21.7957 2.20434C21.5232 1.93189 21.0815 1.93189 20.809 2.20434L17.9857 5.02766C16.7935 4.10187 15.3887 3.43585 13.8468 3.11846C12.6279 2.86754 11.3722 2.86754 10.1532 3.11846C5.65611 4.04418 2.33637 7.9279 2.02427 12.584L2.00003 12.9456V16.6705L2.00004 16.6733L2.00004 17.9833C2.00003 18.8229 2.33021 19.5873 2.86812 20.1452L2.20434 20.809C1.93189 21.0815 1.93189 21.5232 2.20434 21.7957C2.4768 22.0681 2.91855 22.0681 3.191 21.7957L21.7957 3.191ZM13.5655 4.48515C14.8323 4.74591 15.9924 5.28014 16.99 6.02335L9.09702 13.9163C8.60981 12.7288 7.61421 11.8052 6.36174 11.4424L6.09109 11.364C5.74679 11.2643 5.39047 11.2137 5.0323 11.2137C4.49243 11.2137 3.98799 11.3563 3.55146 11.6055C4.2132 8.04746 6.91755 5.20912 10.4346 4.48515C11.4679 4.27244 12.5322 4.27244 13.5655 4.48515Z"
+                                    ></path>
+                                <path
+                                    d="M20.5052 7.87394C20.3071 7.54348 19.8785 7.43623 19.5481 7.63439C19.2176 7.83254 19.1104 8.26107 19.3085 8.59153C19.8552 9.50318 20.2468 10.521 20.4485 11.6055C20.012 11.3563 19.5076 11.2137 18.9677 11.2137C18.6096 11.2137 18.2532 11.2643 17.9089 11.364L17.6383 11.4424C16.1034 11.8869 14.9545 13.1734 14.6537 14.7568C14.4799 15.6715 14.4799 16.6119 14.6537 17.5266C14.9545 19.11 16.1034 20.3965 17.6383 20.841L17.9089 20.9194C18.2532 21.0191 18.6096 21.0698 18.9677 21.0698C20.6574 21.0698 22 19.6727 22 17.9833V16.6747L22 16.6705V12.9456L21.9758 12.584C21.8611 10.8731 21.3406 9.2671 20.5052 7.87394Z"
+                                    ></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="header">
+                <p>Hello, <b><span id="username"></span></b>! | Your Token: <b><span id="token"></span></b> | <span id="log-out">Log Out</span> | <span id="delete-account">Delete Account</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
